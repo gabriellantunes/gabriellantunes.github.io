@@ -10,41 +10,44 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      background-color: white;
+      background: linear-gradient(to bottom right, #06AA48, white);
     }
     .container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 400px;
-      width: 400px;
+      height: 100%;
+      width: 100%;
     }
     iframe {
-      width: 100%;
+      max-width: 100%;
+      max-height: 90%;
+      width: 650px;
       height: 600px;
+      border-radius: 10px; /* Arredonda os cantos */
     }
     .footer {
       position: absolute;
       bottom: 10px;
       left: 10px;
-      font-size: 14px;
+      font-size: 13px;
       color: white;
     }
     .copyright {
       position: absolute;
       bottom: 10px;
       right: 10px;
-      font-size: 14px;
-      color: white;
+      font-size: 13px;
+      color: #06AA48;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <iframe src="https://replit.com/@gabrielantunesb/teste3?embed=true" frameborder="0" width="500" height="500"></iframe>
+    <iframe src="https://replit.com/@gabrielantunesb/teste3?embed=true" frameborder="0"></iframe>
     <div class="footer">
-      made with ❤️ by gabe
+      made with ❤️ and 🥤 by gabe.
     </div>
     <div class="copyright">
       © 2023 Joinville BRA, Inc All rights reserved

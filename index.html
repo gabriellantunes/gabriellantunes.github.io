@@ -79,21 +79,38 @@
       padding: 10px 0;
     }
   </style>
-  <script>
+    <script>
     function toggleSidebar() {
       var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('overlay');
+
       if (sidebar.style.left === "-300px") {
         sidebar.style.left = "0px";
+        overlay.style.display = "block";
       } else {
-        sidebar.style.left = "-200px";
+        sidebar.style.left = "-300px";
+        overlay.style.display = "none";
       }
     }
+
+    function closeSidebarOnClickOutside(event) {
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('overlay');
+
+      if (event.target === overlay) {
+        sidebar.style.left = "-300px";
+        overlay.style.display = "none";
+      }
+    }
+
+    document.addEventListener('click', closeSidebarOnClickOutside);
   </script>
 </head>
 <body>
   <div class="container">
     <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
-    <div id="sidebar" class="sidebar" style="left: -300px;">
+    <div id="overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;"></div>
+    <div id="sidebar" class="sidebar" style="left: -300px;z-index:2;">
       <ul>
         <li>Home</li>
         <li>Quem somos?</li>

@@ -64,13 +64,15 @@
     }
     .sidebar {
       position: absolute;
-      top: 0;
-      width: 200px;
-      height: 100%;
+      top: 60px; /* Mudança da posição do menu lateral */
+      left: 30px;
+      width: 180px; /* Largura reduzida do menu lateral */
       background-color: #1C2333;
-      transition: left 0.3s ease;
+      transition: all 0.3s ease;
       padding: 15px;
       z-index: 2;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 0 15px 15px 15px;
     }
     .sidebar ul {
       list-style: none;
@@ -78,64 +80,65 @@
       margin: 0;
     }
     .sidebar ul li {
-      font-size: 18px;
+      font-size: 16px; /* Reduzindo o tamanho da fonte */
+      font-weight: 500;
       color: white;
-      padding: 10px 0;
+      padding: 10px 15px; /* Reduzindo o padding */
+      margin: 5px 0; /* Reduzindo a margem */
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .sidebar ul li:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: white;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      transform: translateX(10px);
+      cursor: pointer;
+      transition: 1s;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      display: block;
     }
   </style>
   <script>
     function toggleSidebar() {
       var sidebar = document.getElementById('sidebar');
-      var overlay = document.getElementById('overlay');
 
-      if (sidebar.style.left === "-300px") {
-        sidebar.style.left = "0px";
-        overlay.style.display = "block";
+      if (sidebar.style.display === "none") {
+        sidebar.style.display = "block";
       } else {
-        sidebar.style.left = "-300px";
-        overlay.style.display = "none";
+        sidebar.style.display = "none";
       }
     }
-
-    function closeSidebarOnClickOutside(event) {
-      var sidebar = document.getElementById('sidebar');
-      var overlay = document.getElementById('overlay');
-
-      if (event.target === overlay) {
-        sidebar.style.left = "-300px";
-        overlay.style.display = "none";
-      }
-    }
-
-    document.addEventListener('click', closeSidebarOnClickOutside);
   </script>
 </head>
 <body>
   <div class="container">
     <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
-    <div id="overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;">
+    <div id="sidebar" class="sidebar" style="display:none;">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li>Quem somos?</li>
+        <li><a href="Sobre.html">Sobre</a></li>
+      </ul>
     </div>
-    <div id="sidebar" class="sidebar" style="left: -300px;z-index:2;">
-    <ul>
-      <li><a href="home.html" style="color: white; text-decoration: none;">Home</a></li>
-      <li>Quem somos?</li>
-      <li><a href="Sobre.html" style="color: white; text-decoration: none;">Sobre</a></li>
-    </ul>
+    <h1>Sobre o MindReader</h1>
+    <p>Estamos orgulhosos de apresentar o MindReader, um projeto desenvolvido por alunos da Univille. A inteligência artificial é capaz de adivinhar qual é o seu time de futebol brasileiro favorito. O objetivo deste projeto é demonstrar o poder e as possibilidades da inteligência artificial e do aprendizado de máquina aplicados ao mundo do esporte e entretenimento, nele nós colocamos características dos times como cores, mascotes, estádios, jogares e titulos para que o jogador possa responder as respostas com sim ou não</p>
+    <h1>Como utilizar ?</h1>
+    <p>1.</p>
+    <p>2.</p>
+    <p>3.</p>
+    <p>4.</p>
+
+    <div class="footer">
+      made with ❤️ by gabe.
     </div>
-      <h1>Sobre o MindReader</h1>
-      <p>Estamos orgulhosos de apresentar o MindReader, um projeto desenvolvido por alunos da Univille. A inteligência artificial é capaz de adivinhar qual é o seu time de futebol brasileiro favorito. O objetivo deste projeto é demonstrar o poder e as possibilidades da inteligência artificial e do aprendizado de máquina aplicados ao mundo do esporte e entretenimento, nele nós colocamos características dos times como cores, mascotes, estádios, jogares e titulos para que o jogador possa responder as respostas com sim ou não</p>
-      <h1>Como utilizar ?</h1>
-      <p>1.</p>
-      <p>2.</p>
-      <p>3.</p>
-      <p>4.</p>
-      
-      <div class="footer">
-    made with ❤️ by gabe.
-      </div>
-      <div class="copyright">
-    © 2023 Joinville BRA, Inc All rights reserved
-      </div>
+    <div class="copyright">
+      © 2023 Joinville BRA, Inc All rights reserved
     </div>
-    </body>
-    </html>
+  </div>
+</body>
+</html>

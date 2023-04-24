@@ -77,32 +77,40 @@
     }
   </style>
   <script>
-    function closeNotification() {
-      document.querySelector('.notification').style.opacity = '0';
-      setTimeout(function () {
-        document.querySelector('.notification').style.display = 'none';
-      }, 1200);
+    function showNotification() {
+      var isNotificationDisplayed = localStorage.getItem('isNotificationDisplayed');
+
+      if (!isNotificationDisplayed) {
+        var notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        notification.style.opacity = '1';
+      }
     }
-    document.addEventListener('DOMContentLoaded', function() {
-      setTimeout(function() {
-        document.querySelector('.notification').style.display = 'block';
-        document.querySelector('.notification').style.opacity = '1';
-      }, 500); // Reduzindo o tempo de exibição da notificação para 500ms
-    });
-</script>
+
+    function closeNotification() {
+      var notification = document.getElementById('notification');
+      notification.style.opacity = '0';
+      setTimeout(function () {
+        notification.style.display = 'none';
+      }, 1200);
+      localStorage.setItem('isNotificationDisplayed', true);
+    }
+
+    window.onload = showNotification;
+  </script>
 </head>
 <body>
   <div class="container">
     <a href="index.html" class="menu-item">Jogar</a>
     <a href="Sobre.html" class="menu-item">Sobre</a>
-    <a href="#" class="menu-item">Contato</a>
+    <a href="#" class="menu-item">Contato </a>
   </div>
-  <div class="notification">
+  <div id="notification" class="notification">
     <h1>Olá, seja muito bem vindo.</h1>
-    <p> Eu sou a MindReaderIA, uma inteligência artificial que foi desenvolvida por alunos da Univille.</p>
-	  <p> O meu dever no momento é pensar no time de futebol brasileiro que você torce, ou esteja pensando.</p>
-	  <p> Se tiver alguma dúvida clique em "Sobre", esta pagina ficará destinada para auxiliar em tudo que precisa para conseguir aproveitar ao máximo do nosso projeto.</p>
-	  <button class="close-button" onclick="closeNotification()">Ok</button>
+    <p> Eu sou o MindReader, uma inteligência artificial que foi desenvolvida por alunos da Univille.</p>
+    <p> O meu dever no momento é pensar no time de futebol brasileiro que você torce, ou esteja pensando.</p>
+    <p> Se tiver alguma dúvida clique em "Sobre", esta pagina ficará destinada para auxiliar em tudo que precisa para conseguir aproveitar ao máximo do nosso projeto.</p>
+    <button class="close-button" onclick="closeNotification()">Ok</button>
   </div>
   <div class="footer">
     made with ❤️ by gabe.

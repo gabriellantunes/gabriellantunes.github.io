@@ -15,97 +15,108 @@
     }
     .container {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100%;
-      width: 100%;
-      overflow: hidden;
-      position: relative;
     }
-    .hamburger-icon {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 24px;
-      color: white;
-      cursor: pointer;
-      background: transparent;
-      border-radius: 50%;
-      padding: 8px;
-      transition: background-color 0.3s ease;
-    }
-    .hamburger-icon:hover {
-      background-color: rgba(255, 255, 255, 0.4);
-    }
-    .sidebar {
-      position: absolute;
-      top: 60px; /* Mudança da posição do menu lateral */
-      left: 30px;
-      width: 180px; /* Largura reduzida do menu lateral */
-      background-color: #1C2333;
-      transition: all 0.3s ease;
-      padding: 15px;
-      z-index: 2;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-      border-radius: 0 15px 15px 15px;
-    }
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .sidebar ul li {
-      font-size: 16px; /* Reduzindo o tamanho da fonte */
-      font-weight: 500;
-      color: white;
-      padding: 10px 15px; /* Reduzindo o padding */
-      margin: 5px 0; /* Reduzindo a margem */
-      transition: background-color 0.3s ease, color 0.3s ease;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-    .sidebar ul li:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-      color: white;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-      transform: translateX(10px);
-      cursor: pointer;
-      transition: 1s;
-    }
-    .sidebar ul li a {
+    .menu-item, .close-button {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 20px;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      border-radius: 5px;
       text-decoration: none;
-      color: white;
-      display: block;
+      transition: all 0.3s ease;
+    }
+    .menu-item:hover, .close-button:hover {
+      background-color: #ffffff;
+      color: #a56de0;
+      transform: translateY(-5px);
+    }
+    .notification {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color:#1C2333;
+      padding: 30px;
+      width: 500px;
+      height: 500px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+    .close-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      float: right;
+      font-size: 1.1em;
+      margin-top: 200px;
+    }
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
+    }
+    .copyright {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      color: #06AA48;
+      font-family: 'Arial', sans-serif;
+      font-size: 15px;
     }
   </style>
   <script>
-    function toggleSidebar() {
-      var sidebar = document.getElementById('sidebar');
+    function showNotification() {
+      var isNotificationDisplayed = localStorage.getItem('isNotificationDisplayed');
 
-      if (sidebar.style.display === "none") {
-        sidebar.style.display = "block";
-      } else {
-        sidebar.style.display = "none";
+      if (!isNotificationDisplayed) {
+        var notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        notification.style.opacity = '1';
       }
     }
+
+    function closeNotification() {
+      var notification = document.getElementById('notification');
+      notification.style.opacity = '0';
+      setTimeout(function () {
+        notification.style.display = 'none';
+      }, 1200);
+      localStorage.setItem('isNotificationDisplayed', true);
+    }
+
+    window.onload = showNotification;
   </script>
 </head>
 <body>
   <div class="container">
-    <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
-    <div id="sidebar" class="sidebar" style="display:none;">
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li>Quem somos?</li>
-        <li><a href="Sobre.html">Sobre</a></li>
-      </ul>
-    </div>
-
-    <!-- Restante do conteúdo da página -->
-    <iframe src="https://replit.com/@gabrielantunesb/teste3?embed=true&hideExplorer=true" frameborder="0" style="max-width: 100%; max-height: 90%; width: 650px; height: 600px; border-radius: 15px;"></iframe>
-    <div class="footer" style="position: absolute; bottom: 10px; left: 10px; font-size: 13px; color: white;">made with ❤️ by gabe.</div>
-    <div class="copyright" style="position: absolute; bottom: 10px; right: 10px; font-size: 13px; color: #06AA48;">© 2023 Joinville BRA, Inc All rights reserved</div>
+    <a href="index.html" class="menu-item">Jogar</a>
+    <a href="Sobre.html" class="menu-item">Sobre</a>
+    <a href="#" class="menu-item">Contato </a>
+  </div>
+  <div id="notification" class="notification">
+    <h1>Olá, seja muito bem vindo.</h1>
+    <p> Eu sou o MindReader, uma inteligência artificial que foi desenvolvida por alunos da Univille.</p>
+    <p> O meu dever no momento é pensar no time de futebol brasileiro que você torce, ou esteja pensando.</p>
+    <p> Se tiver alguma dúvida clique em "Sobre", esta pagina ficará destinada para auxiliar em tudo que precisa para conseguir aproveitar ao máximo do nosso projeto.</p>
+    <button class="close-button" onclick="closeNotification()">Ok</button>
+  </div>
+  <div class="footer">
+    made with ❤️ by gabe.
+  </div>
+  <div class="copyright">
+    © 2023 Joinville BRA, Inc All rights reserved
   </div>
 </body>
 </html>

@@ -6,7 +6,6 @@
   <title>MindReader • Contato</title>
   <link rel="icon" href="icon.png" type="image/png">
   <style>
-    /* ... estilos ... */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,7 +13,6 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom right, #06AA48 60%, #ffffff);
     }
-    /* ... outros estilos ... */
     .container {
       display: flex;
       flex-direction: column;
@@ -37,7 +35,7 @@
       margin-bottom: 10px;
     }
     a {
-      color: #46295A; /* Alterada a cor dos links para a mesma cor dos itens do menu lateral */
+      color: #46295A;
       text-decoration: none;
       transition: box-shadow 0.3s ease;
     }
@@ -114,10 +112,8 @@
       color: white;
       display: block;
     }
-    /* ... estilos do menu lateral ... */
   </style>
   <script>
-    /* ... script para alternar a exibição do menu lateral ... */
     function toggleSidebar() {
       var sidebar = document.getElementById('sidebar');
       if (sidebar.style.display === "none") {
@@ -130,7 +126,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- ... menu lateral ... -->
     <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
     <div id="sidebar" class="sidebar" style="display:none;">
       <ul>

@@ -55,7 +55,6 @@
       font-size: 13px;
       color: #06AA48;
     }
-    /* ... estilos do menu lateral ... */
     .hamburger-icon {
       position: absolute;
       top: 15px;
@@ -73,9 +72,9 @@
     }
     .sidebar {
       position: absolute;
-      top: 60px; /* Mudança da posição do menu lateral */
+      top: 60px;
       left: 30px;
-      width: 180px; /* Largura reduzida do menu lateral */
+      width: 180px;
       background-color: #1C2333;
       transition: all 0.3s ease;
       padding: 15px;
@@ -89,11 +88,11 @@
       margin: 0;
     }
     .sidebar ul li {
-      font-size: 16px; /* Reduzindo o tamanho da fonte */
+      font-size: 16px;
       font-weight: 500;
       color: white;
-      padding: 10px 15px; /* Reduzindo o padding */
-      margin: 5px 0; /* Reduzindo a margem */
+      padding: 10px 15px;
+      margin: 5px 0;
       transition: background-color 0.3s ease, color 0.3s ease;
       border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.1);
@@ -112,10 +111,9 @@
       display: block;
     }
     ul li {
-      color: #ffffff; /* Adicionando a cor branca aos itens dentro da tag <ul> */
+      color: #ffffff;
     }
   </style>
-  <!-- ... script para alternar a exibição do menu lateral ... -->
   <script>
     function toggleSidebar() {
       var sidebar = document.getElementById('sidebar');
@@ -130,7 +128,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- ... menu lateral ... -->
     <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
     <div id="sidebar" class="sidebar" style="display:none;">
       <ul>

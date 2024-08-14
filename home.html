@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -102,6 +103,116 @@
       </ul>
     </div>
     <iframe src="https://replit.com/@gabrielantunesb/teste3?embed=true&hideExplorer=true" frameborder="0" style="max-width: 100%; max-height: 90%; width: 650px; height: 600px; border-radius: 15px;"></iframe>
+    <div class="footer" style="position: absolute; bottom: 10px; left: 10px; font-size: 13px; color: white;">made with ❤️ by gabe.</div>
+    <div class="copyright" style="position: absolute; bottom: 10px; right: 10px; font-size: 13px; color: #06AA48;">© 2023 Joinville BRA, Inc All rights reserved</div>
+  </div>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindReader • O Adivinhador de Times</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #06AA48 60%, #ffffff);
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .hamburger-icon {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      background: transparent;
+      border-radius: 50%;
+      padding: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .hamburger-icon:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+    .sidebar {
+      position: absolute;
+      top: 60px;
+      left: 30px;
+      width: 180px;
+      background-color: #1C2333;
+      transition: all 0.3s ease;
+      padding: 15px;
+      z-index: 2;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 0 15px 15px 15px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      padding: 10px 15px;
+      margin: 5px 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .sidebar ul li:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: white;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      transform: translateX(10px);
+      cursor: pointer;
+      transition: 1s;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+  </style>
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar');
+
+      if (sidebar.style.display === "none") {
+        sidebar.style.display = "block";
+      } else {
+        sidebar.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
+    <div id="sidebar" class="sidebar" style="display:none;">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="Sobre.html">Sobre</a></li>
+      </ul>
+    </div>
+    <iframe src="https://replit.com/@gabrielantunesb/MindReader?embed=true&hideExplorer=true" frameborder="0" style="max-width: 100%; max-height: 90%; width: 650px; height: 600px; border-radius: 15px;"></iframe>
     <div class="footer" style="position: absolute; bottom: 10px; left: 10px; font-size: 13px; color: white;">made with ❤️ by gabe.</div>
     <div class="copyright" style="position: absolute; bottom: 10px; right: 10px; font-size: 13px; color: #06AA48;">© 2023 Joinville BRA, Inc All rights reserved</div>
   </div>
